@@ -1,0 +1,4 @@
+
+-e git://github.com/gabrielgrant/django-ckeditor.git#egg=django-ckeditor
+-e git://github.com/gabrielgrant/django-html-field.git#egg=django-html-field
+-e git://github.com/gabrielgrant/django-static-filtered-images.git#egg=django-static-filtered-images

@@ -1,0 +1,21 @@
+django-team for your "meet our team" page.
+
+
+Installation
+
+add django-articles and its dependencies to the installed_apps list:
+
+- static_filtered_images
+- ckeditor
+- team
+
+
+add a resize setting:
+
+ TEAM_IMAGE_RESIZE = {'width':280, 'style':"=="}
+ 
+ add a line into your urlconf:
+ 
+ 
+    (r'^investor/', include(team_list('investors'))),
+    (r'^team/', include('team.urls')),
