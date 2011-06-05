@@ -19,7 +19,7 @@ class Member(models.Model):
 	join_date = models.DateField()
 	bio = models.TextField(blank=True)
 	image = models.ImageField(upload_to='team_images', blank=True)
-	display_image = FilteredImageField(
+	display_image = FilteredImageField(max_length=200,
 		src_field=image,
 		filter_chain=[
 			ResizeFilter(**settings.TEAM_IMAGE_RESIZE),
