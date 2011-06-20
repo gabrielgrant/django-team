@@ -2,11 +2,11 @@ from django.conf.urls.defaults import *
 from django.views.generic import ListView
 from team.models import Member
 
-def team_list(team_name=None):
-	if team_name is None:
-		queryset = Member.objects.all()
+def team_list(*teams):
+	if teams:
+		queryset = Member.objects.filter(teams__name__in=teams)
 	else:
-		queryset = Member.objects.filter(name=team_name)
+		queryset = Member.objects.all()
 		
 	urlpatterns = patterns('',
 		(r'^/$', ListView.as_view(
